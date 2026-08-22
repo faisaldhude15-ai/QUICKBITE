@@ -1,16 +1,54 @@
-# React + Vite
+# 🚀 QuickBite - Full Stack Food Delivery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Yeh ek complete full-stack food delivery application hai jo React, Node.js, Express, aur MongoDB par bani hai. Is project mein frontend aur backend dono files sath hain.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Local Machine Setup Guide
 
-## React Compiler
+### 1. Project Project System Clone
+```bash
+git clone https://github.com
+cd QUICKBITE
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 2. Backend Server Run Karna (File 1)
+1. **Backend folder mein jayein:**
+   ```bash
+   cd backend
+   ```
+2. **Packages install karein:**
+   ```bash
+   npm install
+   ```
+3. **Environment Setup (.env):**
+   `backend` folder mein ek `.env` naam ki file banayein aur usme yeh text paste karein:
+   ```env
+   PORT=5000
+   MONGODB_URI=mongodb://127.0.0.1:27017/quickbite
+   JWT_SECRET=quickbite_secret_2026
+   ```
+4. **Server start karein:**
+   ```bash
+   npm start
+   ```
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### 3. Frontend App Run Karna (File 2)
+*Apne terminal par ek **naya window/tab** kholein aur yeh commands chalayein:*
+1. **Frontend folder mein jayein:**
+   ```bash
+   cd frontend
+   ```
+2. **Packages install karein:**
+   ```bash
+   npm install
+   ```
+3. **API Connector Config (.env):**
+   `frontend` folder mein ek `.env` file banayein aur usme local server mapping dalein:
+   ```env
+   VITE_API_URL=http://localhost:5000
+   ```
+4. **Interface start karein:**
+   ```bash
+   npm run dev
+   ```
