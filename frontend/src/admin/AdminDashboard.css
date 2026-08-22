@@ -1,0 +1,49 @@
+.admin-dashboard{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.admin-dashboard h1{
+    text-align:center;
+    color:#ff5722;
+    margin-bottom:10px;
+}
+
+.admin-subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:40px;
+}
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.dashboard-card{
+    background:#fff;
+    border-radius:15px;
+    padding:30px;
+    text-decoration:none;
+    color:#222;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    border:2px solid transparent;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-8px);
+    border-color:#ff5722;
+}
+
+.dashboard-card h2{
+    margin-bottom:15px;
+    color:#ff5722;
+}
+
+.dashboard-card p{
+    color:#555;
+    line-height:1.6;
+}
