@@ -1,92 +1,128 @@
+/* ==========================================================================
+   📌 DESKTOP STANDARD STRUCTURAL MODULE
+   ========================================================================== */
 .add-food {
-
-    width: 500px;
-    margin: 40px auto;
-    padding: 30px;
-
-    background: #ffffff;
-
-    border-radius: 15px;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f2f6;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 
 .add-food h1 {
-
-    text-align: center;
-
-    margin-bottom: 25px;
-
-    color: #e63946;
-
+  font-size: 26px;
+  color: #2d3436;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
 }
-
-
 
 .add-food form {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 15px;
-
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-
-
-.add-food input,
+/* Custom Uniform Field Styling */
+.add-food input[type="text"],
+.add-food input[type="number"],
 .add-food textarea {
-
-
-    padding: 12px;
-
-    border:1px solid #ddd;
-
-    border-radius:8px;
-
-    font-size:16px;
-
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #495057;
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
 }
 
-
-
-.add-food textarea{
-
-    height:120px;
-
-    resize:none;
-
+.add-food textarea {
+  min-height: 100px;
+  resize: vertical;
 }
 
-
-
-.add-food button{
-
-
-    padding:14px;
-
-    background:#e63946;
-
-    color:white;
-
-    border:none;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
-    font-size:18px;
-
+.add-food input:focus,
+.add-food textarea:focus {
+  border-color: #ff4757;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.15);
 }
 
-
-
-.add-food button:hover{
-
-
-    background:#c1121f;
-
+/* File Picker Custom Design Module */
+.add-food input[type="file"] {
+  padding: 10px;
+  border: 2px dashed #ced4da;
+  border-radius: 8px;
+  background: #f8f9fa;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+.add-food .food-preview {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e1e8ed;
+  margin-top: 5px;
+}
+
+.add-food button[type="submit"] {
+  background: #ff4757;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.add-food button[type="submit"]:hover {
+  background: #e03d4b;
+}
+
+.add-food button[type="submit"]:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   📱 MOBILE SMART AUTOMATION RESCALE (Media Breakpoint: Max 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .add-food {
+    margin: 20px 15px !important; /* Soft side crunches for narrow phone grids */
+    padding: 20px 15px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  .add-food h1 {
+    font-size: 20px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .add-food input[type="text"],
+  .add-food input[type="number"],
+  .add-food textarea,
+  .add-food input[type="file"],
+  .add-food button[type="submit"] {
+    font-size: 14px !important; /* Standardizing optimal readability scale */
+    padding: 11px 12px !important;
+  }
+  
+  .add-food .food-preview {
+    max-height: 150px !important;
+  }
+}
+
