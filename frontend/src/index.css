@@ -1,113 +1,187 @@
 /* ==========================================================================
-   📌 QUICKBITE GLOBAL RESPONSIVE RESET SYSTEM
+   📦 1. UNIVERSAL BOXING & ROOT RESET (For Laptop & Mobile Stability)
    ========================================================================== */
-
-/* Universal Padding Box Fix */
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  overflow-x: hidden; /* Mobile standard layout horizontal scroll lock */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #2d3436;
+  overflow-x: hidden; /* Restricts bad horizontal break scrollbars on tiny phones */
   width: 100%;
 }
 
-/* ==========================================================================
-   📱 MOBILE STYLING OVERRIDES (Max Width: 768px - Phones & Small Tablets)
-   ========================================================================== */
-@media screen and (max-width: 768px) {
-  
-  /* 1. Container Balance Standard Spacing */
-  .container, .app-container {
-    padding: 0 12px !important;
-    width: 100% !important;
-  }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-  /* 2. Seamless Flexbox Collapse Layout */
-  .flex-row, .flex, .navbar-container, .hero-section, .checkout-layout, .footer-container {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 16px !important;
-  }
-
-  /* 3. Automatic Fluid Grid System for Food Cards */
-  .food-grid, .menu-grid, .products-list, .category-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)) !important;
-    gap: 12px !important;
-    padding: 8px !important;
-    width: 100% !important;
-  }
-
-  /* 4. Food Card Responsive Spacing Corrections */
-  .food-card {
-    width: 100% !important;
-    margin: 0 auto !important;
-    padding: 10px !important;
-  }
-
-  .food-card img {
-    height: 110px !important;
-    object-fit: cover !important;
-  }
-
-  .food-card h3 {
-    font-size: 15px !important;
-  }
-
-  /* 5. Fluid Responsive Images Control */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  /* 6. Typography Scale Down for Smaller Screens */
-  h1 { font-size: 26px !important; line-height: 1.2 !important; }
-  h2 { font-size: 20px !important; }
-  h3 { font-size: 16px !important; }
-  p  { font-size: 14px !important; }
-
-  /* 7. Forms, Inputs & Action Buttons Full Width Fluid Execution */
-  input, select, textarea, .btn, .button, .login-btn, .checkout-btn {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 15px !important;
-    padding: 12px !important;
-  }
-
-  /* 8. Admin/User Tables Layout Transformation */
-  table, thead, tbody, th, td, tr {
-    display: block !important;
-    width: 100% !important;
-  }
-  
-  tr {
-    margin-bottom: 15px !important;
-    border: 1px solid #ddd !important;
-    padding: 8px !important;
-    border-radius: 6px !important;
-    background: #fff !important;
-  }
-
-  td {
-    text-align: right !important;
-    padding-left: 50% !important;
-    position: relative !important;
-    border: none !important;
-    border-bottom: 1px solid #eee !important;
-  }
+/* Base structural constraint layout wrapper */
+.container, .app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* ==========================================================================
-   🤏 SMALL SCREEN MICRO CORRECTIONS (Max Width: 480px - Small Devices)
+   💻 2. LAPTOP & DESKTOP DEFAULT SYSTEM (Screens Larger than 768px)
    ========================================================================== */
-@media screen and (max-width: 480px) {
-  .food-grid, .menu-grid {
-    grid-template-columns: repeat(2, 1fr) !important; /* Forces 2 perfect columns layout on micro devices */
-    gap: 8px !important;
-    padding: 4px !important;
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Ultra Adaptive Modern Grid Matrix for Laptop Product Screens */
+.food-grid, .menu-grid, .products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.food-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease-in-out;
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Horizontal Box Structure for Standard Cart List Item Viewports */
+.cart-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.cart-image {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.cart-info {
+  padding: 16px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ==========================================================================
+   📱 3. MOBILE FLUID AUTOMATION SYSTEM (Media Breakpoint: Max 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
   
-  h1 { font-size: 22px !important; }
+  /* Container Spacing Soft Crunches */
+  .container, .app-container {
+    padding: 0 12px !important;
+  }
+
+  /* Structural Columns Stack Collapse Overrides */
+  .navbar {
+    flex-direction: column !important;
+    padding: 12px 15px !important;
+    gap: 12px !important;
+    text-align: center !important;
+  }
+
+  /* Adaptive Grid Matrix Cells Remapping - Sets Beautiful Two Column Layout */
+  .nav-links {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .nav-links a {
+    font-size: 13px !important;
+    padding: 8px 4px !important;
+    background: #ffffff !important;
+    border: 1px solid #e1e8ed !important;
+    border-radius: 6px !important;
+    text-align: center !important;
+    display: block !important;
+  }
+
+  /* Master Products Listing Conversion for Mobile */
+  .food-grid, .menu-grid, .products-list {
+    grid-template-columns: repeat(2, 1fr) !important; /* Perfect 2 items per row layout */
+    gap: 10px !important;
+    padding: 10px 0 !important;
+  }
+
+  .food-card {
+    padding: 10px !important;
+    border-radius: 8px !important;
+  }
+
+  .food-card h3 {
+    font-size: 14px !important;
+  }
+
+  /* Complete Vertical Box Collapse of Individual Shopping Cart Items */
+  .cart-card {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding-bottom: 12px !important;
+  }
+
+  .cart-image {
+    width: 100% !important; /* Image spans edge-to-edge on cell container bounds */
+    height: 140px !important;
+  }
+
+  .cart-info {
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    padding: 12px !important;
+  }
+
+  /* Standardizing Button Wrappers Full Fluid Horizontal Stretch */
+  .btn, .button, .logout-btn, .remove-btn, .checkout-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px !important;
+    font-size: 14px !important;
+    display: block !important;
+    text-align: center !important;
+  }
+
+  /* Responsive Font Scaling Reset Matrix */
+  h1 { font-size: 24px !important; }
+  h2 { font-size: 18px !important; }
+  h3 { font-size: 15px !important; }
+  p  { font-size: 13px !important; }
+}
+
+/* Tiny Smartphone Screens Safety Checks (Max 400px) */
+@media screen and (max-width: 400px) {
+  .food-grid, .menu-grid, .products-list {
+    grid-template-columns: 1fr !important; /* Forces a crisp single card stream on micro screens */
+  }
 }
