@@ -1,0 +1,151 @@
+.admin-orders {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.admin-orders h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.admin-order-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.admin-order-card:hover {
+  transform: translateY(-3px);
+}
+
+.order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.order-top h2 {
+  margin: 0;
+  color: #333;
+}
+
+.order-top select {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  background: #fff;
+  font-size: 15px;
+}
+
+.order-top select:focus {
+  border-color: #ff6b00;
+}
+
+.admin-order-card p {
+  margin: 10px 0;
+  color: #444;
+  font-size: 15px;
+}
+
+.admin-order-card h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.admin-order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-order-item:last-child {
+  border-bottom: none;
+}
+
+.admin-order-item span:first-child {
+  font-weight: 500;
+  color: #333;
+}
+
+.admin-order-item span:last-child {
+  font-weight: bold;
+  color: #ff6b00;
+}
+
+.admin-order-card hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 18px 0;
+}
+
+.admin-order-card h2:last-child {
+  text-align: right;
+  color: #28a745;
+  margin-top: 15px;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.status.pending {
+  background: #ff9800;
+}
+
+.status.confirmed {
+  background: #2196f3;
+}
+
+.status.preparing {
+  background: #9c27b0;
+}
+
+.status.out-for-delivery {
+  background: #00bcd4;
+}
+
+.status.delivered {
+  background: #4caf50;
+}
+
+@media (max-width: 768px) {
+  .admin-orders {
+    width: 95%;
+  }
+
+  .order-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .order-top select {
+    width: 100%;
+  }
+
+  .admin-order-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .admin-order-card h2:last-child {
+    text-align: left;
+  }
+}

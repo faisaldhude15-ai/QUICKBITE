@@ -1,0 +1,458 @@
+/* =========================
+   Global Reset
+========================= */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+
+
+body {
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: #f8f8f8;
+
+  color: #333;
+
+}
+
+
+
+a {
+
+  text-decoration: none;
+
+  color: inherit;
+
+}
+
+
+
+button {
+
+  cursor: pointer;
+
+  border: none;
+
+}
+
+
+
+/* =========================
+   Navbar
+========================= */
+
+
+.navbar {
+
+  width: 100%;
+
+  height: 70px;
+
+  background: #ff4d00;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 60px;
+
+}
+
+
+
+.navbar h2 {
+
+  font-size: 28px;
+
+  font-weight: bold;
+
+}
+
+
+
+.nav-links {
+
+  display: flex;
+
+  gap: 25px;
+
+  align-items: center;
+
+}
+
+
+
+.nav-links a {
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+}
+
+
+
+.nav-links a:hover {
+
+  opacity: 0.8;
+
+}
+
+
+
+.nav-links button {
+
+  background: white;
+
+  color: #ff4d00;
+
+  padding: 8px 15px;
+
+  border-radius: 6px;
+
+  font-weight: bold;
+
+}
+
+
+
+/* =========================
+   Main Container
+========================= */
+
+
+.main-container {
+
+  min-height: 75vh;
+
+  padding: 40px;
+
+}
+
+
+
+/* =========================
+   Home Page
+========================= */
+
+
+.home {
+
+  text-align: center;
+
+  padding: 100px 20px;
+
+}
+
+
+
+.home h1 {
+
+  font-size: 45px;
+
+  color: #ff4d00;
+
+}
+
+
+
+.home p {
+
+  font-size: 20px;
+
+  margin-top: 15px;
+
+}
+
+
+
+/* =========================
+   Login/Register
+========================= */
+
+
+.auth-container {
+
+  width: 400px;
+
+  margin: 60px auto;
+
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+
+
+.auth-container h1 {
+
+  text-align: center;
+
+  color: #ff4d00;
+
+  margin-bottom: 25px;
+
+}
+
+
+
+.auth-container form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+}
+
+
+
+.auth-container input {
+
+  padding: 14px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+
+}
+
+
+
+.auth-container input:focus {
+
+  outline: none;
+
+  border-color: #ff4d00;
+
+}
+
+
+
+.auth-container button {
+
+  padding: 14px;
+
+  background: #ff4d00;
+
+  color: white;
+
+  border-radius: 8px;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+}
+
+
+
+.auth-container button:hover {
+
+  background: #e63d00;
+
+}
+
+
+
+.error {
+
+  color: red;
+
+  text-align: center;
+
+}
+
+
+
+/* =========================
+   Footer
+========================= */
+
+
+footer {
+
+  background: #222;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 20px;
+
+}
+
+
+
+/* =========================
+   Responsive
+========================= */
+
+
+@media(max-width:700px){
+
+
+  .navbar {
+
+    padding: 0 20px;
+
+  }
+
+
+
+  .nav-links {
+
+    gap: 10px;
+
+  }
+
+
+
+  .auth-container {
+
+    width: 90%;
+
+  }
+
+
+
+  .home h1 {
+
+    font-size: 32px;
+
+  }
+
+
+}
+/* =========================
+   Menu Page
+========================= */
+
+
+.menu-container {
+
+  padding: 40px;
+
+}
+
+
+
+.menu-container h1 {
+
+  text-align:center;
+
+  color:#ff4d00;
+
+  margin-bottom:40px;
+
+}
+
+
+
+.food-grid {
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:25px;
+
+}
+
+
+
+.food-card {
+
+  background:white;
+
+  padding:20px;
+
+  border-radius:15px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.12);
+
+  text-align:center;
+
+}
+
+
+
+.food-card img {
+
+  width:100%;
+
+  height:200px;
+
+  object-fit:cover;
+
+  border-radius:10px;
+
+}
+
+
+
+.food-card h2 {
+
+  margin:15px 0;
+
+}
+
+
+
+.food-card p {
+
+  font-size:20px;
+
+  color:#ff4d00;
+
+  font-weight:bold;
+
+}
+
+
+
+.food-card button {
+
+  background:#ff4d00;
+
+  color:white;
+
+  padding:12px 25px;
+
+  border-radius:8px;
+
+  margin-top:15px;
+
+}
+
+
+
+.food-card button:hover {
+
+  background:#e63d00;
+
+}
