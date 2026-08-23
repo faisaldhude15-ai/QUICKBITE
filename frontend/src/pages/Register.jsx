@@ -33,7 +33,7 @@ function Register() {
     }
   };
 
-  // Inline CSS Styles Object
+  // یہاں flex-direction کو بدل کر flexDirection کر دیا گیا ہے
   const styles = {
     container: {
       maxWidth: "450px",
@@ -53,7 +53,7 @@ function Register() {
     },
     form: {
       display: "flex",
-      flex-direction: "column",
+      flexDirection: "column", // ہائفن ختم کر کے CamelCase کر دیا گیا
       gap: "18px"
     },
     input: {
