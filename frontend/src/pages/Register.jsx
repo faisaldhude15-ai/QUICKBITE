@@ -33,7 +33,7 @@ function Register() {
     }
   };
 
-  // یہاں flex-direction کو بدل کر flexDirection کر دیا گیا ہے
+  // 100% پرفیکٹ اور لچکدار اسٹائلنگ بلاک
   const styles = {
     container: {
       maxWidth: "450px",
@@ -43,7 +43,8 @@ function Register() {
       borderRadius: "16px",
       boxShadow: "0 10px 30px rgba(0, 0, 0, 0.08)",
       textAlign: "center",
-      fontFamily: "sans-serif"
+      fontFamily: "sans-serif",
+      boxSizing: "border-box"
     },
     heading: {
       fontSize: "2.2rem",
@@ -53,8 +54,9 @@ function Register() {
     },
     form: {
       display: "flex",
-      flexDirection: "column", // ہائفن ختم کر کے CamelCase کر دیا گیا
-      gap: "18px"
+      flexDirection: "column", 
+      gap: "18px",
+      width: "100%"
     },
     input: {
       width: "100%",
@@ -64,7 +66,8 @@ function Register() {
       fontSize: "1rem",
       backgroundColor: "#f8fafc",
       color: "#334155",
-      boxSizing: "border-box"
+      boxSizing: "border-box",
+      display: "block"
     },
     button: {
       width: "100%",
@@ -76,7 +79,8 @@ function Register() {
       fontSize: "1.1rem",
       fontWeight: "600",
       cursor: "pointer",
-      marginTop: "10px"
+      marginTop: "10px",
+      display: "block"
     },
     error: {
       backgroundColor: "#fee2e2",
@@ -85,7 +89,8 @@ function Register() {
       borderRadius: "8px",
       fontSize: "0.95rem",
       marginBottom: "20px",
-      border: "1px solid #fca5a5"
+      border: "1px solid #fca5a5",
+      textAlign: "center"
     }
   };
 
