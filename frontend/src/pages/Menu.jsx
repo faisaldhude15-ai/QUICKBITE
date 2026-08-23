@@ -6,16 +6,30 @@ function Menu() {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // =========================
-  // Get Foods
-  // =========================
+  // ===============================
+  // Get All Foods
+  // ===============================
   const getFoods = async () => {
     try {
-      const { data } = await api.get("/foods");
-      console.log("FOODS RESPONSE:", data);
-      setFoods(data.foods || []);
+      setLoading(true);
+
+      const response = await api.get("/foods");
+
+      console.log("FOODS RESPONSE:", response.data);
+
+      if (response.data?.foods) {
+        setFoods(response.data.foods);
+      } else if (Array.isArray(response.data)) {
+        setFoods(response.data);
+      } else {
+        setFoods([]);
+      }
     } catch (error) {
-      console.log("FOODS ERROR:", error.response?.data || error.message);
+      console.error(
+        "FOODS ERROR:",
+        error.response?.data || error.message
+      );
+
       setFoods([]);
     } finally {
       setLoading(false);
@@ -26,20 +40,25 @@ function Menu() {
     getFoods();
   }, []);
 
-  // =========================
-  // Add To Cart
-  // =========================
+  // ===============================
+  // Add Food To Cart
+  // ===============================
   const addToCart = async (foodId) => {
     try {
-      console.log("FOOD ID:", foodId);
-      const { data } = await api.post("/cart/add", {
+      const response = await api.post("/cart/add", {
         foodId,
-        quantity: 1
+        quantity: 1,
       });
-      console.log("CART RESPONSE:", data);
+
+      console.log("CART RESPONSE:", response.data);
+
       alert("Food Added To Cart 🛒");
     } catch (error) {
-      console.log("ADD CART ERROR:", error.response?.data || error.message);
+      console.error(
+        "ADD CART ERROR:",
+        error.response?.data || error.message
+      );
+
       if (error.response?.status === 401) {
         alert("Please Login First");
       } else {
@@ -48,50 +67,86 @@ function Menu() {
     }
   };
 
+  // ===============================
+  // Loading
+  // ===============================
   if (loading) {
     return (
       <div className="menu-loading">
-        <h2>Loading Delicious Foods...</h2>
+        <h2>Loading Delicious Foods... 🍔</h2>
       </div>
     );
   }
 
+  // ===============================
+  // Menu
+  // ===============================
   return (
     <div className="menu-container">
+
       <h1>Our Food Menu 🍔</h1>
 
       {foods.length === 0 ? (
         <div className="no-food">
           <h2>No Food Available At The Moment</h2>
+          <p>Please check again later.</p>
         </div>
       ) : (
         <div className="food-grid">
-          {foods.map((food) => (
-            <div className="food-card" key={food._id}>
-              <img
-                src={
-                  food.image
-                    ? `${import.meta.env.VITE_API_URL || "http://localhost:5000"}${food.image}`
-                    : "https://via.placeholder.com/300"
-                }
-                alt={food.name}
-                onError={(e) => {
-                  e.target.src = "https://via.placeholder.com/300";
-                }}
-              />
 
-              <div className="food-card-body">
-                <h2>{food.name}</h2>
-                <p>{food.description || "Fresh and delicious food item."}</p>
-                <h3>Rs {food.price}</h3>
-                <button onClick={() => addToCart(food._id)}>
-                  Add To Cart 🛒
-                </button>
+          {foods.map((food) => {
+
+            const imageUrl = food.image
+              ? food.image.startsWith("http")
+                ? food.image
+                : `${import.meta.env.VITE_SERVER_URL}${food.image}`
+              : "https://via.placeholder.com/300x200?text=No+Image";
+
+            return (
+              <div
+                className="food-card"
+                key={food._id}
+              >
+
+                <img
+                  src={imageUrl}
+                  alt={food.name || "Food"}
+                  onError={(event) => {
+                    event.currentTarget.src =
+                      "https://via.placeholder.com/300x200?text=No+Image";
+                  }}
+                />
+
+                <div className="food-card-body">
+
+                  <h2>
+                    {food.name}
+                  </h2>
+
+                  <p>
+                    {food.description ||
+                      "Fresh and delicious food item."}
+                  </p>
+
+                  <h3>
+                    Rs {food.price}
+                  </h3>
+
+                  <button
+                    onClick={() => addToCart(food._id)}
+                  >
+                    Add To Cart 🛒
+                  </button>
+
+                </div>
+
               </div>
-            </div>
-          ))}
+            );
+          })}
+
         </div>
       )}
+
     </div>
   );
 }

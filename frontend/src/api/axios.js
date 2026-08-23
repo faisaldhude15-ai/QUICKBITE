@@ -1,59 +1,29 @@
 import axios from "axios";
 
-
 const api = axios.create({
-
-    baseURL:"http://localhost:5000/api",
-
-    withCredentials:true
-
+  baseURL: import.meta.env.VITE_API_URL,
+  withCredentials: true,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
-
-
-
 // ===============================
-// Send JWT Token Automatically
+// Automatically Send JWT Token
 // ===============================
-
 api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token");
 
-    (config)=>{
-
-
-        const token = localStorage.getItem("token");
-
-
-        console.log(
-            "TOKEN SEND:",
-            token
-        );
-
-
-
-        if(token){
-
-            config.headers.Authorization =
-            `Bearer ${token}`;
-
-        }
-
-
-
-        return config;
-
-
-    },
-
-
-    (error)=>{
-
-        return Promise.reject(error);
-
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
     }
 
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
 );
-
-
 
 export default api;

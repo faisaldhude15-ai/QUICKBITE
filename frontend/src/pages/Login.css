@@ -1,0 +1,187 @@
+.login-page {
+  min-height: 80vh;
+  padding: 60px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #fff7f2;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 430px;
+
+  padding: 40px;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+  text-align: center;
+}
+
+.login-logo {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fff0e8;
+
+  font-size: 35px;
+}
+
+.login-card h1 {
+  margin: 0;
+
+  color: #222;
+
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.login-subtitle {
+  margin: 10px 0 28px;
+
+  color: #777;
+
+  font-size: 15px;
+}
+
+.login-error {
+  margin-bottom: 20px;
+  padding: 12px;
+
+  border-radius: 8px;
+
+  background: #ffe5e5;
+  color: #d60000;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.form-group label {
+  color: #333;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-group input {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #fafafa;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #ff5a1f;
+
+  background: #fff;
+
+  box-shadow: 0 0 0 3px rgba(255, 90, 31, 0.12);
+}
+
+.login-button {
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #ff5a1f;
+  color: #fff;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.login-button:hover {
+  background: #e94b12;
+
+  transform: translateY(-2px);
+}
+
+.login-button:disabled {
+  background: #aaa;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+.register-text {
+  margin-top: 25px;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+.register-text span {
+  color: #ff5a1f;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.register-text span:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .login-page {
+    padding: 40px 15px;
+  }
+
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .login-card h1 {
+    font-size: 27px;
+  }
+}
